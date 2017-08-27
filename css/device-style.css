@@ -39,11 +39,11 @@ body {
   height: 100%;
   margin: auto;
   font-family: "Gilroy Bold", Arial, sans-serif;
-  outline: 2px solid green;
+  box-sizing: border-box;
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 .main-header {
@@ -75,7 +75,7 @@ body {
   margin-top: 15px;
 }
 
-.block-search__label {
+.block-search__form {
   display: flex;
   flex-direction: row;
   width: 441px;
@@ -95,7 +95,7 @@ body {
   background: none;
 }
 
-.block-search__label::before {
+.block-search__form::before {
   content: "";
   display: block;
   position: absolute;
@@ -118,11 +118,13 @@ body {
 }
 
 .block-search__button:hover {
+  display: block;
   background-color: #000000;
   color: rgba(255, 255, 255, 1);
 }
 
 .block-search__button:active {
+  display: block;
   background-color: #000000;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -1708,7 +1710,7 @@ li:nth-of-type(3) .user-menu__item {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background-color: lightblue;
+  background-color: #ffffff;
   box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.2),
               -10px 10px 30px 10px rgba(0, 0, 0, 0.2);
 }
@@ -1862,19 +1864,71 @@ li:nth-of-type(3) .user-menu__item {
 }
 
 /*Карта*/
-
 .modal-map {
   display: none;
   width: 960px;
   height: 559px;
   position: absolute;
+  z-index: 5;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.2),
+              -10px 10px 30px 10px rgba(0, 0, 0, 0.2);
 }
 
 .modal-map--show {
   display: block;
+}
+
+.modal-map--close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 60px;
+  height: 60px;
+  background-color: rgba(240, 197, 46, 0.5);
+  border-radius: 50%;
+}
+
+.modal-map--close::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: 29px;
+  display: block;
+  height: 31px;
+  width: 2px;
+  background-color: rgba(255, 255, 255, 1);
+  transform: rotate(45deg);
+}
+
+.modal-map--close::after {
+  content: "";
+  position: absolute;
+  top: 29px;
+  right: 14px;
+  display: block;
+  height: 2px;
+  width: 31px;
+  background-color: rgba(255, 255, 255, 1);
+  transform: rotate(45deg);
+}
+
+.modal-map--close:hover {
+  background-color: rgba(240, 197, 46, 1);
+}
+
+.modal-map--close:hover::before,
+.modal-map--close:hover::after {
+  transform: rotate(0deg);
+}
+
+.modal-map--close:active::before,
+.modal-map--close:active::after {
+  transform: rotate(45deg);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 /*Оверлэй*/
@@ -1893,4 +1947,3 @@ li:nth-of-type(3) .user-menu__item {
 .modal-overlay--show {
   display: block;
 }
-

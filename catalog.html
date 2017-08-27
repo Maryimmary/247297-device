@@ -14,11 +14,10 @@
           <img src="img/logo-header.png" width="165" height="36" alt="Device">
         </a>
         <div class="main-header__block">
-          <form method="post" action="#">
-            <label class="block-search__label">
-              <input class="block-search__textfield" type="text" placeholder="Поиск по сайту">
-              <button class="block-search__button" type="submit" href="#">Найти</button>
-            </label>
+          <form class="block-search__form" method="post" action="#">
+            <label for="block-search__textfield"></label>
+            <input class="block-search__textfield" id="block-search__textfield" type="text" placeholder="Поиск по сайту">
+            <button class="block-search__button" type="submit">Найти</button>
           </form>
           <div class="main-header__positioner">
             <div class="user-block">
@@ -155,7 +154,7 @@
           </div>
           <section class="catalog">
             <article class="catalog-item">
-              <img class="catalog-item__img" src="img/item-1.jpg" width="360" height="380">
+              <img class="catalog-item__img" src="img/item-1.jpg" width="360" height="380" alt="Любительская селфи-палка">
               <div class="catalog__container">
                 <button class="button-basket">В корзину</button>
                 <button class="button-compare">Добавить к сравнению</button>
@@ -166,7 +165,7 @@
               </div>
             </article>
             <article class="catalog-item">
-              <img class="catalog-item__img" src="img/item-2.jpg" width="360" height="380">
+              <img class="catalog-item__img" src="img/item-2.jpg" width="360" height="380" alt="Профессиональная селфи-палка">
               <div class="catalog__container">
                 <button class="button-basket">В корзину</button>
                 <button class="button-compare">Добавить к сравнению</button>
@@ -177,7 +176,7 @@
               </div>
             </article>
             <article class="catalog-item">
-              <img class="catalog-item__img" src="img/item-3.jpg" width="360" height="380">
+              <img class="catalog-item__img" src="img/item-3.jpg" width="360" height="380" alt="Непотопляемая селфи-палка">
               <div class="catalog__container">
                 <button class="button-basket">В корзину</button>
                 <button class="button-compare">Добавить к сравнению</button>
@@ -188,7 +187,7 @@
               </div>
             </article>
             <article class="catalog-item">
-              <img class="catalog-item__img" src="img/item-4.jpg" width="360" height="380">
+              <img class="catalog-item__img" src="img/item-4.jpg" width="360" height="380" alt="Селфи-палка Следуй за мной">
               <div class="catalog__container">
                 <button class="button-basket">В корзину</button>
                 <button class="button-compare">Добавить к сравнению</button>
@@ -273,7 +272,7 @@
       </form>
       <div class="modal-content__close"></div>
     </div>
-    <iframe class="modal-map"></iframe>
     <div class="modal-overlay"></div>
+    <script src="js/script.js"></script>
   </body>
 </html>
