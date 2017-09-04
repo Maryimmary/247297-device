@@ -5,7 +5,7 @@
     <meta name="keywords" content="">
     <title>Device</title>
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/device-style.css">
+    <link rel="stylesheet" href="css/min-device-style.css">
   </head>
   <body>
     <header class="main-header main-header--catalog">
@@ -15,14 +15,13 @@
         </a>
         <div class="main-header__block">
           <form class="block-search__form" method="post" action="#">
-            <label for="block-search__textfield"></label>
-            <input class="block-search__textfield" id="block-search__textfield" type="text" placeholder="Поиск по сайту">
+            <input class="block-search__textfield" name="info" id="block-search__textfield" type="text" placeholder="Поиск по сайту">
             <button class="block-search__button" type="submit">Найти</button>
           </form>
           <div class="main-header__positioner">
             <div class="user-block">
               <a class="user-block__user-name" href="#">Валентин Петухов</a>
-              <a class="user-block__logout" href="#">Выйти</a>
+              <a class="user-block__logout" href="catalog.html">Выйти</a>
             </div>
             <div class="item-block">
               <a class="item-block__compare" href="#">Сравнить</a>
@@ -90,140 +89,155 @@
         </ul>
       </div>
       <div class="catalog-content">
-        <form class="check-block" method="post" action="#">
-          <h2 class="check-block__title">Фильтр:</h2>
-          <!--Ползунок-->
-          <div class="check-block__range">
-            <h3 class="check-block__block-title">Стоимость</h3>
-            <div class="range">
-              <div class="range__scale">
-                <div class="range__bar"></div>
+        <div class="catalog-content__title-container">
+          <div class="catalog-content__title-positioner">
+            <h2 class="check-block__title">Фильтр:</h2>
+            <div class="catalog-content__sorting-container">
+              <h2 class="catalog-block__title">Сортировка:</h2>
+              <span class="catalog-block__sorting catalog-block__sorting--active">По цене</span>
+              <span class="catalog-block__sorting">По типу</span>
+              <span class="catalog-block__sorting">По популярности</span>
+              <div class="sorting-arrows">
+                <a class="sorting-arrows__arrow-up" href="#">По возрастанию</a>
+                <a class="sorting-arrows__arrow-down" href="#">По убыванию</a>
               </div>
-              <div class="range__toggle range__toggle--min"></div>
-              <div class="range__toggle range__toggle--max"></div>
             </div>
           </div>
-            <!--Чекбоксы-->
-          <div class="check-block__checkbox">
-            <h3 class="check-block__block-title">Цвет</h3>
-            <div class="checkbox">
-              <input class="checkbox__input" type="checkbox" name="black" id="black" checked>
-              <label class="checkbox__label" for="black">Черный</label>
-            </div>
-            <div class="checkbox">
-              <input class="checkbox__input" type="checkbox" name="white" id="white">
-              <label class="checkbox__label" for="white">Белый</label>
-            </div>
-            <div class="checkbox">
-              <input class="checkbox__input" type="checkbox" name="blue" id="blue" checked>
-              <label class="checkbox__label" for="blue">Синий</label>
-            </div>
-            <div class="checkbox">
-              <input class="checkbox__input" type="checkbox" name="red" id="red" checked>
-              <label class="checkbox__label" for="red">Красный</label>
-            </div>
-            <div class="checkbox">
-              <input class="checkbox__input" type="checkbox" name="pink" id="pink">
-              <label class="checkbox__label" for="pink">Розовый</label>
+        </div>
+        <div class="catalog-content__positioner">
+          <div class="catalog-content__form-container">
+            <form class="check-block" method="post" action="#">
+                <!--Ползунок-->
+                <div class="check-block__range">
+                  <h3 class="check-block__block-title">Стоимость</h3>
+                  <div class="range">
+                    <div class="range__scale">
+                      <div class="range__bar"></div>
+                    </div>
+                    <div class="range__toggle range__toggle--min"></div>
+                    <div class="range__toggle range__toggle--max"></div>
+                  </div>
+                </div>
+                  <!--Чекбоксы-->
+                <div class="check-block__checkbox">
+                  <h3 class="check-block__block-title">Цвет</h3>
+                  <div class="checkbox">
+                    <input class="checkbox__input" type="checkbox" name="black" id="black" checked>
+                    <label class="checkbox__label" for="black">Черный</label>
+                  </div>
+                  <div class="checkbox">
+                    <input class="checkbox__input" type="checkbox" name="white" id="white">
+                    <label class="checkbox__label" for="white">Белый</label>
+                  </div>
+                  <div class="checkbox">
+                    <input class="checkbox__input" type="checkbox" name="blue" id="blue" checked>
+                    <label class="checkbox__label" for="blue">Синий</label>
+                  </div>
+                  <div class="checkbox">
+                    <input class="checkbox__input" type="checkbox" name="red" id="red" checked>
+                    <label class="checkbox__label" for="red">Красный</label>
+                  </div>
+                  <div class="checkbox">
+                    <input class="checkbox__input" type="checkbox" name="pink" id="pink">
+                    <label class="checkbox__label" for="pink">Розовый</label>
+                  </div>
+                </div>
+                <!--Bluetooth-->
+                <div class="check-block__radio">
+                  <h3 class="check-block__block-title">Bluetooth</h3>
+                  <div class="radio">
+                    <input class="radio__input" type="radio" name="radio" id="yes">
+                    <label class="radio__label" for="yes">Есть</label>
+                  </div>
+                  <div class="radio">
+                    <input class="radio__input" type="radio" name="radio" id="no">
+                    <label class="radio__label" for="no">Нет</label>
+                  </div>
+                </div>
+                <input  class="btn-big" type="submit" value="Показать">
+            </form>
+          </div>
+          <div class="catalog-content__gallery-container">
+
+            <div class="catalog-block">
+                <section class="catalog">
+                  <article class="catalog-item">
+                    <img class="catalog-item__img" src="img/item-1.jpg" width="360" height="380" alt="Любительская селфи-палка">
+                    <div class="catalog__container">
+                      <a class="button-basket" href="#">В корзину</a>
+                      <button class="button-compare">Добавить к сравнению</button>
+                    </div>
+                    <div class="catalog-item__info">
+                      <a class="catalog-item__name">Любительская селфи-палка</a>
+                      <span class="catalog-item__price">500 руб.</span>
+                    </div>
+                    <div class = "catalog-item__new"></div>
+                  </article>
+                  <article class="catalog-item">
+                    <img class="catalog-item__img" src="img/item-2.jpg" width="360" height="380" alt="Профессиональная селфи-палка">
+                    <div class="catalog__container">
+                      <a class="button-basket" href="#">В корзину</a>
+                      <button class="button-compare">Добавить к сравнению</button>
+                    </div>
+                    <div class="catalog-item__info">
+                      <a class="catalog-item__name">Профессиональная селфи-палка</a>
+                      <span class="catalog-item__price">1 500 руб.</span>
+                    </div>
+                    <div class = "catalog-item__new"></div>
+                  </article>
+                  <article class="catalog-item">
+                    <img class="catalog-item__img" src="img/item-3.jpg" width="360" height="380" alt="Непотопляемая селфи-палка">
+                    <div class="catalog__container">
+                      <a class="button-basket" href="#">В корзину</a>
+                      <button class="button-compare">Добавить к сравнению</button>
+                    </div>
+                    <div class="catalog-item__info">
+                      <a class="catalog-item__name">Непотопляемая селфи-палка</a>
+                      <span class="catalog-item__price">2 500 руб.</span>
+                    </div>
+                    <div class = "catalog-item__new"></div>
+                  </article>
+                  <article class="catalog-item">
+                    <img class="catalog-item__img" src="img/item-4.jpg" width="360" height="380" alt="Селфи-палка Следуй за мной">
+                    <div class="catalog__container">
+                      <a class="button-basket" href="#">В корзину</a>
+                      <button class="button-compare">Добавить к сравнению</button>
+                    </div>
+                    <div class="catalog-item__info">
+                      <a class="catalog-item__name">Селфи-палка "Следуй за мной"</a>
+                      <span class="catalog-item__price">4 900 руб.</span>
+                    </div>
+                    <div class = "catalog-item__new"></div>
+                  </article>
+                </section>
+                <section class="pagination">
+                  <a class="pagination__btn pagination__btn--prev">Назад</a>
+                  <div class="pagination__page-container">
+                    <a class="pagination__page pagination__page--active">1</a>
+                    <a class="pagination__page" href="#">2</a>
+                    <a class="pagination__page" href="#">3</a>
+                  </div>
+                  <a class="pagination__btn pagination__btn--next" href="#">Вперед</a>
+                </section>
             </div>
           </div>
-          <!--Bluetooth-->
-          <div class="check-block__radio">
-            <h3 class="check-block__block-title">Bluetooth</h3>
-            <div class="radio">
-              <input class="radio__input" type="radio" name="radio" id="yes">
-              <label class="radio__label" for="yes">Есть</label>
-            </div>
-            <div class="radio">
-              <input class="radio__input" type="radio" name="radio" id="no">
-              <label class="radio__label" for="no">Нет</label>
-            </div>
-          </div>
-          <input  class="btn-big" type="submit" value="Показать">
-        </form>
-        <div class="catalog-block">
-          <div class="catalog-block__container">
-            <h2 class="catalog-block__title">Сортировка:</h2>
-            <span class="catalog-block__sorting catalog-block__sorting--active">По цене</span>
-            <span class="catalog-block__sorting">По типу</span>
-            <span class="catalog-block__sorting">По популярности</span>
-            <div class="sorting-arrows">
-              <span class="sorting-arrows__arrow-up">По возрастанию</span>
-              <span class="sorting-arrows__arrow-down">По убыванию</span>
-            </div>
-          </div>
-          <section class="catalog">
-            <article class="catalog-item">
-              <img class="catalog-item__img" src="img/item-1.jpg" width="360" height="380" alt="Любительская селфи-палка">
-              <div class="catalog__container">
-                <button class="button-basket">В корзину</button>
-                <button class="button-compare">Добавить к сравнению</button>
-              </div>
-              <div class="catalog-item__info">
-                <a class="catalog-item__name">Любительская селфи-палка</a>
-                <span class="catalog-item__price">500 руб.</span>
-              </div>
-            </article>
-            <article class="catalog-item">
-              <img class="catalog-item__img" src="img/item-2.jpg" width="360" height="380" alt="Профессиональная селфи-палка">
-              <div class="catalog__container">
-                <button class="button-basket">В корзину</button>
-                <button class="button-compare">Добавить к сравнению</button>
-              </div>
-              <div class="catalog-item__info">
-                <a class="catalog-item__name">Профессиональная селфи-палка</a>
-                <span class="catalog-item__price">1 500 руб.</span>
-              </div>
-            </article>
-            <article class="catalog-item">
-              <img class="catalog-item__img" src="img/item-3.jpg" width="360" height="380" alt="Непотопляемая селфи-палка">
-              <div class="catalog__container">
-                <button class="button-basket">В корзину</button>
-                <button class="button-compare">Добавить к сравнению</button>
-              </div>
-              <div class="catalog-item__info">
-                <a class="catalog-item__name">Непотопляемая селфи-палка</a>
-                <span class="catalog-item__price">2 500 руб.</span>
-              </div>
-            </article>
-            <article class="catalog-item">
-              <img class="catalog-item__img" src="img/item-4.jpg" width="360" height="380" alt="Селфи-палка Следуй за мной">
-              <div class="catalog__container">
-                <button class="button-basket">В корзину</button>
-                <button class="button-compare">Добавить к сравнению</button>
-              </div>
-              <div class="catalog-item__info">
-                <a class="catalog-item__name">Селфи-палка "Следуй за мной"</a>
-                <span class="catalog-item__price">4 900 руб.</span>
-              </div>
-            </article>
-          </section>
-          <section class="pagination">
-            <a class="pagination__btn pagination__btn--prev">Назад</a>
-            <div class="pagination__page-container">
-              <a class="pagination__page pagination__page--active">1</a>
-              <a class="pagination__page" href="#">2</a>
-              <a class="pagination__page" href="#">3</a>
-            </div>
-            <a class="pagination__btn pagination__btn--next" href="#">Вперед</a>
-          </section>
         </div>
       </div>
     </main>
     <footer class="main-footer main-footer--catalog">
       <div class="layot-container layot-container--footer">
         <div class="main-footer__user-menu">
-          <a class="logo main-footer__logo" href="index.html">
+          <a class="logo main-footer__logo" href="catalog.html">
             <img src="img/logo-footer.png" width="165" height="36" alt="Device">
           </a>
           <ul class="user-menu user-menu--catalog">
-            <li>
-              <a class="user-menu__item" href="#">Выйти</a>
+            <li class="user-menu__container">
+              <a class="user-menu__item" href="userform.html">Войти</a>
             </li>
-            <li>
+            <li class="user-menu__container">
               <a class="user-menu__item" href="#">Сравнить</a>
             </li>
-            <li>
+            <li class="user-menu__container">
               <a class="user-menu__item" href="#">Корзина</a>
             </li>
           </ul>
@@ -244,13 +258,12 @@
           <div class="main-footer__tel">Тел.: +7 (495) 495-95-95</div>
         </div>
         <div class="main-footer__links">
-          <div class="main-footer__line"></div>
           <div class="social-links">
-            <a class="social-links__item social-links__item--facebook">Facebook</a>
-            <a class="social-links__item social-links__item--instagram">Instagram</a>
-            <a class="social-links__item social-links__item--twitter">Twitter</a>
+            <a class="social-links__item social-links__item--facebook" href="#">Facebook</a>
+            <a class="social-links__item social-links__item--instagram" href="#">Instagram</a>
+            <a class="social-links__item social-links__item--twitter" href="#">Twitter</a>
           </div>
-          <a href="#" class="main-footer__logo-academy">Сайт HTML Academy</a>
+          <a href="https://htmlacademy.ru/intensive/htmlcss" class="main-footer__logo-academy">Сайт HTML Academy</a>
         </div>
       </div>
     </footer>
@@ -273,6 +286,6 @@
       <div class="modal-content__close"></div>
     </div>
     <div class="modal-overlay"></div>
-    <script src="js/script.js"></script>
+    <script src="js/min-script.js"></script>
   </body>
 </html>
