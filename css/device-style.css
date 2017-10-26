@@ -1807,6 +1807,13 @@ main > .layot-container {
   outline: none;
 }
 
+@media (-ms-high-contrast: none) {
+  .modal-content .input-modal__field,
+  .modal-content .textarea__field {
+    padding: 10px;
+  }
+}
+
 .modal-content .input-modal__field {
   width: 360px;
   height: 50px;
