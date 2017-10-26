@@ -1,31 +1,31 @@
 @font-face {
   font-family: "Open Sans Light";
-  src: url("../fonts/web/opensanslight.woff2") format("woff2"),
-       url("../fonts/web/opensanslight.woff") format("woff");
+  src: url("../fonts/opensanslight.woff2") format("woff2"),
+       url("../fonts/opensanslight.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Open Sans";
-  src: url("../fonts/web/opensans.woff2") format("woff2"),
-       url("../fonts/web/opensans.woff") format("woff");
+  src: url("../fonts/opensans.woff2") format("woff2"),
+       url("../fonts/opensans.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../fonts/web/gilroylight.woff2") format("woff2"),
-       url("../fonts/web/gilroylight.woff") format("woff");
+  src: url("../fonts/gilroylight.woff2") format("woff2"),
+       url("../fonts/gilroylight.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Gilroy Bold";
-  src: url("../fonts/web/gilroyextrabold.woff2") format("woff2"),
-       url("../fonts/web/gilroyextrabold.woff") format("woff");
+  src: url("../fonts/gilroyextrabold.woff2") format("woff2"),
+       url("../fonts/gilroyextrabold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -1019,29 +1019,22 @@ main > .layot-container {
 }
 
 .main-footer__links {
-  position: relative;
   margin-top: 63px;
   margin-bottom: 65px;
 }
 
-.main-footer__links::before {
-  content: "";
-  display: block;
-  position: absolute;
+.main-footer__line {
   width: 80px;
   height: 7px;
-  top: 18px;
+  margin-top: 18px;
   background-color: #ffc600;
 }
 
 .social-links {
-  width: 152px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-right: 54px;
-  margin-left: 503px;
 }
 
 .social-links__item {
@@ -1082,13 +1075,18 @@ main > .layot-container {
   background-position: center;
 }
 
+.social-links__item:nth-of-type(even) {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
 .main-footer__logo-academy {
   font-size: 0;
-  width: 27px;
-  height: 34px;
+  width: 80px;
+  height: 37px;
   background-image: url("../img/logo-html.svg");
   background-repeat: no-repeat;
-  background-position: center 1px;
+  background-position: right 3px;
 }
 
 .main-footer__logo-academy:hover {
@@ -1258,6 +1256,7 @@ main > .layot-container {
   font-size: 14px;
   color: #000000;
   opacity: 0.3;
+  text-decoration: none;
 }
 
 .catalog-block__sorting:hover {
@@ -1631,6 +1630,8 @@ main > .layot-container {
   background-color: transparent;
   border: none;
   outline: none;
+  text-align: center;
+  text-decoration: none;
 }
 
 .main-content--catalog .button-compare:hover {
@@ -1652,6 +1653,8 @@ main > .layot-container {
   width: 255px;
   font-family: "Gilroy Bold", Arial, sans-serif;
   font-size: 18px;
+  text-decoration: none;
+  color: #000000;
 }
 
 .catalog-item__price {
@@ -1756,29 +1759,30 @@ main > .layot-container {
   display: none;
   width: 960px;
   height: 553px;
-  position: absolute;
+  position: fixed;
   z-index: 5;
   left: 50%;
-  top: 200%;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translate(-50%, -50%);
   background-color: #ffffff;
   box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.2),
               -10px 10px 30px 10px rgba(0, 0, 0, 0.2);
+  animation: popup-show 1s;
 }
 
 .modal-content--show {
   display: block;
-  animation: modal-animation 1s;
 }
 
-@keyframes modal-animation {
-
-  0%   {
-    transform: translateX(-960px);
+@keyframes popup-show {
+  0% {
+    top: -100%;
+    opacity: 0.1;
   }
 
   100% {
-    transform: translateX(-480px);
+    top: 50%;
+    opacity: 1;
   }
 }
 
@@ -1924,77 +1928,6 @@ main > .layot-container {
 
 .modal-content__close:active::before,
 .modal-content__close:active::after {
-  transform: rotate(45deg);
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-/*Карта*/
-.modal-map {
-  display: none;
-  width: 960px;
-  height: 559px;
-  position: absolute;
-  z-index: 5;
-  left: 50%;
-  top: 200%;
-  transform: translateX(-50%);
-  background-color: #ffffff;
-  box-shadow: 10px 10px 30px 10px rgba(0, 0, 0, 0.2),
-              -10px 10px 30px 10px rgba(0, 0, 0, 0.2);
-  animation: modal-animation 1s;
-}
-
-.modal-map--show {
-  display: block;
-}
-
-.modal-map--close {
-  position: absolute;
-  top: 22px;
-  right: 22px;
-  width: 60px;
-  height: 60px;
-  background-color: rgba(240, 197, 46, 0.5);
-  border-radius: 50%;
-  font-size: 0;
-  border: none;
-}
-
-.modal-map--close::before {
-  content: "";
-  position: absolute;
-  top: 15px;
-  right: 29px;
-  display: block;
-  height: 31px;
-  width: 2px;
-  background-color: rgba(255, 255, 255, 1);
-  transform: rotate(45deg);
-}
-
-.modal-map--close::after {
-  content: "";
-  position: absolute;
-  top: 29px;
-  right: 14px;
-  display: block;
-  height: 2px;
-  width: 31px;
-  background-color: rgba(255, 255, 255, 1);
-  transform: rotate(45deg);
-}
-
-.modal-map--close:hover {
-  background-color: rgba(240, 197, 46, 1);
-}
-
-.modal-map--close:hover::before,
-.modal-map--close:hover::after {
-  transform: rotate(0deg);
-}
-
-.modal-map--close:active::before,
-.modal-map--close:active::after {
   transform: rotate(45deg);
   background-color: rgba(255, 255, 255, 0.3);
 }
