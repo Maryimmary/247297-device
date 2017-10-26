@@ -569,28 +569,8 @@ body {
   color: #000000;
 }
 
-.catalog-product:first-of-type:active .catalog-product__pic {
-  background-image: url("../img/popular-1-opa.svg");
-}
-
-.catalog-product:nth-of-type(2):active .catalog-product__pic {
-  background-image: url("../img/popular-2-opa.svg");
-}
-
-.catalog-product:nth-of-type(3):active .catalog-product__pic {
-  background-image: url("../img/popular-3-opa.svg");
-}
-
-.catalog-product:nth-of-type(4):active .catalog-product__pic {
-  background-image: url("../img/popular-4-opa.svg");
-}
-
-.catalog-product:nth-of-type(5):active .catalog-product__pic {
-  background-image: url("../img/popular-5-opa.svg");
-}
-
-.catalog-product:nth-of-type(6):active .catalog-product__pic {
-  background-image: url("../img/popular-6-opa.svg");
+.catalog-product:active .catalog-product__pic {
+  opacity: 0.6;
 }
 
 /*УСЛУГИ*/
